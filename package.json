@@ -1,0 +1,40 @@
+{
+  "name": "avet-theme",
+  "version": "1.0.0",
+  "description": "theme for avet",
+  "avetPlugin": {
+    "name": "theme"
+  },
+  "files": ["config", "output"],
+  "keywords": ["avet", "avetPlugin", "avet-plugin", "theme"],
+  "scripts": {
+    "build": "avet-bin build",
+    "prepublish": "avet-bin build"
+  },
+  "dependencies": {
+    "js-cookie": "^2.2.0",
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "avet-bin": "^1.2.7",
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.11.0",
+    "eslint-config-avet": "^0.4.2"
+  },
+  "tnpm": {
+    "mode": "npm"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avetjs/avet-theme"
+  },
+  "bugs": {
+    "url": "https://github.com/avetjs/avet/issues"
+  },
+  "homepage": "http://avetjs.github.io/avet/",
+  "author": "okoala <dapixp@gmail.com>",
+  "license": "MIT"
+}
