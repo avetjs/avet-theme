@@ -1,5 +1,5 @@
 exports.theme = {
-  cookieKey: 'avet_theme',
+  cookieKey: 'avetTheme',
   styles: {
     common: {}, // 通用的样式
     default: {}, // 默认样式

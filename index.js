@@ -2,32 +2,28 @@ import React from 'react';
 import Cookies from 'js-cookie';
 import config from 'avet/config';
 
-let stylesCache;
-
 const themeConfig = config.theme;
 const chooseTheme = theme => {
   Cookies.set(themeConfig.cookieKey, theme);
   window.location.reload();
 };
 
-const currentTheme = () => {
-  return Cookies.get(themeConfig.cookieKey) || 'default';
+const currentTheme = ctx => {
+  const theme = ctx
+    ? ctx.cookies.get(themeConfig.cookieKey, { signed: false })
+    : Cookies.get(themeConfig.cookieKey);
+  return theme || 'default';
 };
 
-const getThemeStyles = () => {
-  const curTheme = currentTheme();
+const getStyles = ctx => {
+  const curTheme = currentTheme(ctx);
   const commonStyles = themeConfig.styles.common || {};
   const themeStyles = themeConfig.styles[curTheme] || {};
   return Object.assign({}, commonStyles, themeStyles);
 };
 
 export default {
-  get styles() {
-    if (!stylesCache) {
-      stylesCache = getThemeStyles();
-    }
-    return stylesCache;
-  },
+  getStyles,
   chooseTheme,
   currentTheme,
 };
